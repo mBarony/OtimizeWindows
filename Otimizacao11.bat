@@ -784,6 +784,7 @@ winget install 9PKTQ5699M62 -s winget -h --accept-source-agreements --accept-pac
 winget install 9NRWMJP3717K -s winget -h --accept-source-agreements --accept-package-agreements
 winget install Microsoft.UI.Xaml.2.8 -s winget -h --accept-source-agreements --accept-package-agreements
 
+
 REG DELETE "HKCU\Control Panel\Quick Actions" /F
 TIMEOUT /T 5
 taskkill /f /im explorer.exe
