@@ -92,7 +92,7 @@ schtasks /Change /TN "Microsoft\Windows\Customer Experience Improvement Program\
 schtasks /Change /TN "Microsoft\Windows\Customer Experience Improvement Program\UsbCeip" /Disable
 schtasks /Change /TN "Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDiagnosticDataCollector" /Disable
 schtasks /Change /TN "Microsoft\Windows\Maintenance\WinSAT" /Disable
-REM schtasks /Change /TN "Microsoft\Windows\SystemRestore\SR" /Disable
+schtasks /Change /TN "Microsoft\Windows\SystemRestore\SR" /Disable
 schtasks /Change /TN "Microsoft\Office\Office Automatic Updates 2.0" /Disable
 schtasks /Change /TN "Microsoft\Office\Office ClickToRun Service Monitor" /Disable
 schtasks /Change /TN "Microsoft\Office\Office Feature Updates" /Disable
@@ -136,120 +136,11 @@ Dism /online /norestart /Enable-Feature /FeatureName:"DirectPlay"
 
 REM *** Instalar VBS (alguns instaladores usam) ***
 
-<<<<<<< HEAD
-REM DISM.exe /Online /norestart /Disable-Feature /featurename:SimpleTCP /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:Windows-Identity-Foundation /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:DirectoryServices-ADAM-Client /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-WebServerRole /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-WebServer /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-CommonHttpFeatures /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-HttpErrors /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-HttpRedirect /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-ApplicationDevelopment /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-NetFxExtensibility /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-NetFxExtensibility45 /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-HealthAndDiagnostics /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-HttpLogging /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-LoggingLibraries /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-RequestMonitor /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-HttpTracing /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-Security /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-URLAuthorization /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-RequestFiltering /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-IPSecurity /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-Performance /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-HttpCompressionDynamic /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-WebServerManagementTools /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-ManagementScriptingTools /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-IIS6ManagementCompatibility /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-Metabase /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:WAS-WindowsActivationService /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:WAS-ProcessModel /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:WAS-NetFxEnvironment /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:WAS-ConfigurationAPI /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-HostableWebCore /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-CertProvider /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-WindowsAuthentication /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-DigestAuthentication /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-ClientCertificateMappingAuthentication /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-IISCertificateMappingAuthentication /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-ODBCLogging /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-StaticContent /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-DefaultDocument /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-DirectoryBrowsing /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-WebDAV /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-WebSockets /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-ApplicationInit /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-ASPNET /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-ASPNET45 /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-ASP /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-CGI /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-ISAPIExtensions /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-ISAPIFilter /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-ServerSideIncludes /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-CustomLogging /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-BasicAuthentication /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-HttpCompressionStatic /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-ManagementConsole /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-ManagementService /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-WMICompatibility /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-LegacyScripts /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-LegacySnapIn /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-FTPServer /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-FTPSvc /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:IIS-FTPExtensibility /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:MSMQ-Container /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:MSMQ-Server /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:MSMQ-Triggers /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:MSMQ-ADIntegration /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:MSMQ-HTTP /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:MSMQ-Multicast /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:MSMQ-DCOMProxy /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:WCF-HTTP-Activation45 /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:WCF-TCP-Activation45 /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:WCF-Pipe-Activation45 /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:WCF-MSMQ-Activation45 /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:WCF-HTTP-Activation /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:WCF-NonHTTP-Activation /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:NetFx4Extended-ASPNET45 /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:MediaPlayback /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:Printing-XPSServices-Features /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:MSRDC-Infrastructure /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:TelnetClient /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:TFTP /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:TIFFIFilter /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:WorkFolders-Client /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:SMB1Protocol /Remove
-REM DISM.exe /Online /norestart /Disable-Feature /featurename:Microsoft-Hyper-V-All /Remove
-REM DISM.exe /Online /norestart /Disable-Feature /featurename:Microsoft-Hyper-V-Tools-All /Remove
-REM DISM.exe /Online /norestart /Disable-Feature /featurename:Microsoft-Hyper-V /Remove
-REM DISM.exe /Online /norestart /Disable-Feature /featurename:Microsoft-Hyper-V-Management-Clients /Remove
-REM DISM.exe /Online /norestart /Disable-Feature /featurename:Microsoft-Hyper-V-Management-PowerShell /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:SearchEngine-Client-Package /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:WCF-TCP-PortSharing45 /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:SmbDirect /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:Printing-Foundation-Features /Remove
-DISM.exe /Online /norestart /Disable-Feature /featurename:Printing-Foundation-InternetPrinting-Client /Remove
-DISM /Online /norestart /Remove-Capability /CapabilityName:App.StepsRecorder~~~~0.0.1.0
-DISM /Online /norestart /Remove-Capability /CapabilityName:App.Support.QuickAssist~~~~0.0.1.0
-DISM /Online /norestart /Remove-Capability /CapabilityName:Browser.InternetExplorer~~~~0.0.11.0
-DISM /Online /norestart /Remove-Capability /CapabilityName:Hello.Face.20134~~~~0.0.1.0
-DISM /Online /norestart /Remove-Capability /CapabilityName:MathRecognizer~~~~0.0.1.0
-DISM /Online /norestart /Remove-Capability /CapabilityName:Media.WindowsMediaPlayer~~~~0.0.12.0
-DISM /Online /norestart /Remove-Capability /CapabilityName:Microsoft.Windows.WordPad~~~~0.0.1.0
-DISM /Online /Remove-Capability /CapabilityName:VBSCRIPT~~~~
-
-REM *** Remoção Apps Store ***
-
-REM Powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "Get-AppxPackage | where-object {$_.name -notlike '*GamingApp*'} | where-object {$_.name -notlike '*Winget*'} |where-object {$_.name -notlike '*store*'} | where-object {$_.name -notlike '*DesktopAppInstaller*'} |where-object {$_.name -notlike '*xbox*'} | where-object {$_.name -notlike '*terminal*'} |Remove-AppxPackage"
-REM Powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "Get-AppxPackage | where-object {$_.name -notlike '*GamingApp*'} |where-object {$_.name -notlike '*xbox*'} | Remove-AppxPackage"
-=======
 rem DISM /Online /Add-Capability /CapabilityName:VBSCRIPT~~~~
 
 REM *** Remoção Apps Store ***
 
 rem Powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "Get-AppxPackage | where-object {$_.name -notlike '*GamingApp*'} | where-object {$_.name -notlike '*Winget*'} |where-object {$_.name -notlike '*store*'} |  where-object {$_.name -notlike '*DesktopAppInstaller*'} |where-object {$_.name -notlike '*xbox*'} | where-object {$_.name -notlike '*terminal*'} |Remove-AppxPackage"
->>>>>>> upstream/master
 
 REM *** Habilitar Printscreen para Snipping Tool ***
 
@@ -294,8 +185,8 @@ reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Pers
 
 REM *** Desabilitar Bloqueio de Arquivos Baixados na Internet ***
 
-REM reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Attachments" /v "SaveZoneInformation" /t REG_DWORD /d 1 /f
-REM reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Attachments" /v "SaveZoneInformation" /t REG_DWORD /d 1 /f
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Attachments" /v "SaveZoneInformation" /t REG_DWORD /d 1 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Attachments" /v "SaveZoneInformation" /t REG_DWORD /d 1 /f
 
 REM *** Desabilitar Transparencias ***
 
@@ -305,7 +196,7 @@ REM *** Desabilitar Inicialização rápida ***
 
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v "HiberbootEnabled" /t REG_DWORD /d 0 /f
 
-REM *** Desabilitar UAC *** Impacta em programas UWP, como XBOX
+REM *** Desabilitar UAC  *** Impacta em programas UWP, como XBOX
 
 rem reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "EnableLUA" /t REG_DWORD /d 1 /f
 rem reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "PromptOnSecureDesktop" /t REG_DWORD /d 0 /f
@@ -340,8 +231,8 @@ ECHO Ao apertar o botão de desligar, desligar e não adormecer
 powercfg -SETACVALUEINDEX SCHEME_CURRENT 4f971e89-eebd-4455-a8de-9e59040e7347 7648efa3-dd9c-4e3e-b566-50f929386280 3
 powercfg -SETDCVALUEINDEX SCHEME_CURRENT 4f971e89-eebd-4455-a8de-9e59040e7347 7648efa3-dd9c-4e3e-b566-50f929386280 3
 ECHO Desabilitar hibernação de HD/SSD
-REM powercfg /SETDCVALUEINDEX SCHEME_CURRENT 0012ee47-9041-4b5d-9b77-535fba8b1442 6738e2c4-e8a5-4a42-b16a-e040e769756e 0
-REM powercfg /SETACVALUEINDEX SCHEME_CURRENT 0012ee47-9041-4b5d-9b77-535fba8b1442 6738e2c4-e8a5-4a42-b16a-e040e769756e 0
+powercfg /SETDCVALUEINDEX SCHEME_CURRENT 0012ee47-9041-4b5d-9b77-535fba8b1442 6738e2c4-e8a5-4a42-b16a-e040e769756e 0
+powercfg /SETACVALUEINDEX SCHEME_CURRENT 0012ee47-9041-4b5d-9b77-535fba8b1442 6738e2c4-e8a5-4a42-b16a-e040e769756e 0
 
 REM *** Melhorar qualidade papel de parede ***
 
@@ -392,11 +283,11 @@ REG ADD "HKEY_CURRENT_USER\Software\Microsoft\GameBar" /v AutoGameModeEnabled /d
 
 REM *** Desabilitar novo menu de contexto ***
 
-reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f
+rem reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f
 
 REM *** Desabilitar nova barra do Explorer ***
 
-reg add "HKCU\Software\Classes\CLSID\{d93ed569-3b3e-4bff-8355-3c44f6a52bb5}\InprocServer32" /f
+rem reg add "HKCU\Software\Classes\CLSID\{d93ed569-3b3e-4bff-8355-3c44f6a52bb5}\InprocServer32" /f
 
 REM *** Desabilitar VBS ***
 
@@ -404,7 +295,7 @@ REG ADD "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\DeviceGuard" /v Ena
 
 REM *** Alterar Tamanho de Cache de Icones ***
 
-REM reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /v "Max Cached Icons" /t REG_SZ /d 4096 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /v "Max Cached Icons" /t REG_SZ /d 4096 /f
 
 REM *** Desabilitar Otimizacao de Entrega ***
 
@@ -528,9 +419,9 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search" 
 
 REM *** Desabilitar comunicação com dispositivos não pareados ***
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /v LetAppsSyncWithDevices /t REG_DWORD /d 2 /f
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /v LetAppsSyncWithDevices_UserInControlOfTheseApps /t REG_MULTI_SZ /d 00,00 /f
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /v LetAppsSyncWithDevices_ForceAllowTheseApps /t REG_MULTI_SZ /d 00,00 /f
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /v LetAppsSyncWithDevices_ForceDenyTheseApps /t REG_MULTI_SZ /d 00,00 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /v LetAppsSyncWithDevices_UserInControlOfTheseApps /t REG_MULTI_SZ  /d 00,00 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /v LetAppsSyncWithDevices_ForceAllowTheseApps /t REG_MULTI_SZ  /d 00,00 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /v LetAppsSyncWithDevices_ForceDenyTheseApps /t REG_MULTI_SZ  /d 00,00 /f
 
 REM *** Desabilitar acessos ***
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\userNotificationListener" /v Value /t REG_SZ /d Deny /f
@@ -556,12 +447,8 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Capability
 REM ***Desabilitar Smart App Control***
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CI\Policy" /v VerifiedAndReputablePolicyState /t REG_DWORD /d 0 /f
 REM ***Desabilitar Isolamento de Nucleo***
-<<<<<<< HEAD
-REM reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity" /v Enabled /t REG_DWORD /d 0 /f
-=======
 
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity" /v Enabled /t REG_DWORD /d 0 /f
->>>>>>> upstream/master
 
 REM ***Mostrar mais Pins no Iniciar***
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start_Layout /t REG_DWORD /d 0 /f
@@ -628,8 +515,8 @@ reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Feeds\DSB" 
 REM *** Habilitar Finalizar tarefa na barra de tarefas ***
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\DeveloperSettings" /v TaskbarEndTask /t REG_DWORD /d 1 /f
 
-REM *** Mostrar extensões de tipos de arquivo conhecidos ***
-reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v HideFileExt /t REG_DWORD /d 0 /f
+REM *** Esconder extensões de tipos de arquivo conhecidos ***
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v HideFileExt /t REG_DWORD /d 1 /f
 
 REM *** Desabilitar notificações no Menu Iniciar ***
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start_AccountNotifications /t REG_DWORD /d 0 /f
@@ -654,10 +541,10 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsAI" /v Di
 rem DISM /Online /Disable-Feature /FeatureName:"Recall" /Remove
 
 REM ***Instalar Clientes de Jogos ***
-winget install EpicGames.EpicGamesLauncher -s winget -h --accept-source-agreements --accept-package-agreements
-winget install GOG.Galaxy -h -s winget --accept-source-agreements --accept-package-agreements
+REM winget install EpicGames.EpicGamesLauncher -s winget -h --accept-source-agreements --accept-package-agreements
+REM winget install GOG.Galaxy -h -s winget --accept-source-agreements --accept-package-agreements
 REM winget install ElectronicArts.EADesktop -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Valve.Steam -s winget -h --accept-source-agreements --accept-package-agreements
+REM winget install Valve.Steam -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install Ubisoft.Connect -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install Amazon.Games -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install Playnite.Playnite -s winget -h --accept-source-agreements --accept-package-agreements
@@ -686,17 +573,17 @@ REM cinst intel-graphics-driver -y
 REM cinst intel-rst-driver -y
 REM cinst nvidia-display-driver -y
 REM cinst realtek-s winget -h --accept-source-agreements --accept-package-agreementsd-audio-driver -y
-winget install AMD.RyzenMaster -s winget -h --accept-source-agreements --accept-package-agreements
+REM winget install AMD.RyzenMaster -s winget -h --accept-source-agreements --accept-package-agreements
 
 REM ***Instalar Navegadores e Programas para Internet***
 REM winget install eloston.ungoogled-chromium -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install Dropbox.Dropbox -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install KDE.Falkon -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Mozilla.Firefox -s winget -h --accept-source-agreements --accept-package-agreements
+REM winget install Mozilla.Firefox -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install Opera.Opera -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install PicoTorrent.PicoTorrent -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install VivaldiTechnologies.Vivaldi -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.OneDrive -s winget -h --accept-source-agreements --accept-package-agreements
+REM winget install Microsoft.OneDrive -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install TIDALMusicAS.TIDAL -s winget -h --accept-source-agreements --accept-package-agreements
 
 REM ***Instalar Aplicativos***
@@ -713,9 +600,9 @@ REM winget install MKVToolNix.MKVToolNix -s winget -h --accept-source-agreements
 REM winget install clsid2.mpc -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install 9PD88QB3BGKN -s msstore -h --accept-source-agreements --accept-package-agreements & rem mpc-be
 REM cinst msiafterburner -y
-winget install Notepad++.Notepad++ -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.Office -s winget -h --accept-source-agreements --accept-package-agreements
-winget install 9WZDNCRFHVN5 -s msstore -h --accept-source-agreements --accept-package-agreements & rem Calculadora
+REM winget install Notepad++.Notepad++ -s winget -h --accept-source-agreements --accept-package-agreements
+REM winget install Microsoft.Office -s winget -h --accept-source-agreements --accept-package-agreements
+REM winget install 9WZDNCRFHVN5 -s msstore -h --accept-source-agreements --accept-package-agreements & rem Calculadora
 REM cinst oldcalc -y
 REM cinst openal -y
 REM winget install 9NBHCS1LX4R0 -s msstore -h --accept-source-agreements --accept-package-agreements & rem paint.net
@@ -725,7 +612,7 @@ REM winget install PunkLabs.RocketDock -s winget -h --accept-source-agreements -
 REM winget install Piriform.Speccy -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install SumatraPDF.SumatraPDF -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install RandomEngy.VidCoder -s winget -h --accept-source-agreements --accept-package-agreements
-winget install VideoLAN.VLC -s winget -h --accept-source-agreements --accept-package-agreements
+REM winget install VideoLAN.VLC -s winget -h --accept-source-agreements --accept-package-agreements
 REM cinst windowblinds -y
 REM winget install Microsoft.winfile -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install 9NBLGGH404XM -s msstore -h --accept-source-agreements --accept-package-agreements & rem xplorer² lite
@@ -736,95 +623,29 @@ REM winget install t1m0thyj.WinDynamicDesktop -s winget -h --accept-source-agree
 REM winget install File-New-Project.EarTrumpet -s winget -h --accept-source-agreements --accept-package-agreements
 
 REM ***Instalar Utilitários***
-winget install 7zip.7zip -s winget -h --accept-source-agreements --accept-package-agreements
+REM winget install 7zip.7zip -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install 7zip.7zipAlpha -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install BleachBit.BleachBit -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install Piriform.CCleaner -s winget -h --accept-source-agreements --accept-package-agreements
 REM cinst compactgui -y
-winget install CPUID.CPU-Z -s winget -h --accept-source-agreements --accept-package-agreements
+REM winget install CPUID.CPU-Z -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install Piriform.Defraggler -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.DirectX -s winget -h --accept-source-agreements --accept-package-agreements
+REM winget install Microsoft.DirectX -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install ESET.Nod32 -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install ESET.Security -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install flux.flux -s winget -h --accept-source-agreements --accept-package-agreements
 REM cinst kis -y
 REM winget install TechPowerUp.GPU-Z -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install REALiX.HWiNFO -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.PowerToys -s winget -h --accept-source-agreements --accept-package-agreements
+REM winget install Microsoft.PowerToys -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install Rainmeter.Rainmeter -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install Piriform.Recuva -s winget -h --accept-source-agreements --accept-package-agreements
 REM cinst regscanner -y
 REM winget install den4b.ReNamer -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install AntibodySoftware.WizTree -s winget -h --accept-source-agreements --accept-package-agreements
+REM winget install Microsoft.WindowsTerminal -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install Lexikos.AutoHotkey -s winget -h --accept-source-agreements --accept-package-agreements
 REM winget install CodeSector.TeraCopy -s winget -h --accept-source-agreements --accept-package-agreements
-winget install OpenWhisperSystems.Signal -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Audacity.Audacity -s winget -h --accept-source-agreements --accept-package-agreements
-winget install dbeaver.dbeaver -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Discord.Discord -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Nikkho.FileOptimizer -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Git.Git -s winget -h --accept-source-agreements --accept-package-agreements
-winget install HandBrake.HandBrake -s winget -h --accept-source-agreements --accept-package-agreements
-winget install HermannSchinagl.LinkShellExtension -s winget -h --accept-source-agreements --accept-package-agreements
-winget install MediaArea.MediaInfo.GUI -s winget -h --accept-source-agreements --accept-package-agreements
-winget install MiKTeX.MiKTeX -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.Edge -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.EdgeWebView2Runtime -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.AppInstaller -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.UI.Xaml.2.7 -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.UI.Xaml.2.8 -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.VCLibs.Desktop.14 -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.DevHome -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.WindowsTerminal -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Mozilla.Firefox -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Mozilla.Thunderbird -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Notepad++.Notepad++ -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.OneDrive -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Atlassian.Sourcetree -s winget -h --accept-source-agreements --accept-package-agreements
-winget install XavierRoche.HTTrack -s winget -h --accept-source-agreements --accept-package-agreements
-winget install WinMerge.WinMerge -s winget -h --accept-source-agreements --accept-package-agreements
-winget install RARLab.WinRAR -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Winamp.Winamp -s winget -h --accept-source-agreements --accept-package-agreements
-winget install AntibodySoftware.WizTree -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Obsidian.Obsidian -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Balena.Etcher -s winget -h --accept-source-agreements --accept-package-agreements
-winget install WinSCP.WinSCP -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.VCRedist.2013.x64 -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.DotNet.DesktopRuntime.3_1 -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.WindowsInstallationAssistant -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.VCRedist.2010.x64 -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.VCRedist.2015+.x64 -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.DotNet.DesktopRuntime.5 -s winget -h --accept-source-agreements --accept-package-agreements
-winget install DominikReichl.KeePass -s winget -h --accept-source-agreements --accept-package-agreements
-winget install 7zip.7zip -s winget -h --accept-source-agreements --accept-package-agreements
-winget install EpicGames.EpicGamesLauncher -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.VCRedist.2015+.x86 -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Skillbrains.Lightshot -s winget -h --accept-source-agreements --accept-package-agreements
-winget install calibre.calibre -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.VCRedist.2012.x86 -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Telegram.TelegramDesktop -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.VCRedist.2008.x64 -s winget -h --accept-source-agreements --accept-package-agreements
-winget install WiresharkFoundation.Wireshark -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.VCRedist.2005.x86 -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Oracle.JavaRuntimeEnvironment -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.VisualStudioCode -s winget -h --accept-source-agreements --accept-package-agreements
-winget install BlenderFoundation.Blender -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.DotNet.DesktopRuntime.7 -s winget -h --accept-source-agreements --accept-package-agreements
-winget install ParadoxInteractive.ParadoxLauncher -s winget -h --accept-source-agreements --accept-package-agreements
-winget install VideoLAN.VLC -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.VCRedist.2008.x86 -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.VCRedist.2013.x86 -s winget -h --accept-source-agreements --accept-package-agreements
-winget install voidtools.Everything -s winget -h --accept-source-agreements --accept-package-agreements
-winget install StrawberryPerl.StrawberryPerl -s winget -h --accept-source-agreements --accept-package-agreements
-winget install PuTTY.PuTTY -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.VCRedist.2010.x86 -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.VCRedist.2012.x64 -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.PowerToys -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.DotNet.DesktopRuntime.6 -s winget -h --accept-source-agreements --accept-package-agreements
-winget install 9PKTQ5699M62 -s winget -h --accept-source-agreements --accept-package-agreements
-winget install 9NRWMJP3717K -s winget -h --accept-source-agreements --accept-package-agreements
-winget install Microsoft.UI.Xaml.2.8 -s winget -h --accept-source-agreements --accept-package-agreements
-
 
 rem REG DELETE "HKCU\Control Panel\Quick Actions" /F
 TIMEOUT /T 5
